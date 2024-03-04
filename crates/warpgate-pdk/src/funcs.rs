@@ -179,6 +179,9 @@ pub fn is_musl(env: &HostEnvironment) -> bool {
             if res.0.exit_code == 0 {
                 value = res.0.stdout.to_lowercase();
             }
+            if res.0.exit_code == 1 {
+                value = res.0.stderr.to_lowercase();
+            }
         }
     }
 
